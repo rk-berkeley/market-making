@@ -1,7 +1,6 @@
 # Asian Option Pricing & Optimal Market-Making under Fad Dynamics
 
-> **Quantitative Finance Research Project**
-
+> **Quantitative Finance Research Project** 
 ---
 
 ## Overview
@@ -22,10 +21,10 @@ The market-making model is based on the recent paper:
 
 | Result | Details |
 |---|---|
-| **Price ordering** | Proved and verified: $C^{\text{geom}}_{\text{Asian}} \le C^{\text{arith}}_{\text{Asian}} \le C_{\text{BS}}$ for all 100 parameter combinations |
+| **Price ordering** | Proved and verified: $C^{geom}_{Asian} \leq C^{arith}_{Asian} \leq C_{BS}$ for all 100 parameter combinations |
 | **Variance reduction** | Geometric averaging consistently narrows 95% CIs by 2–10% depending on moneyness |
 | **Convexity** | Numerical confirmation: min second finite difference $> 0$ across full strike grid |
-| **Monte Carlo** | $M = 200{,}000$ paths, $n = 50$ steps, exact log-normal increments (no discretisation bias) |
+| **Monte Carlo** | M = 200,000 paths, n = 50 steps, exact log-normal increments (no discretisation bias) |
 
 ### Part 2 — Optimal Market-Making
 
@@ -78,9 +77,9 @@ The market-making model is based on the recent paper:
 ### Part 1: Asian Options
 
 The risk-neutral price of an arithmetic Asian call is:
-$$\text{CallAsian}(r, \sigma, S_0, T, K) = e^{-rT} \mathbb{E}^{\mathbb{Q}}\!\left[\left(\frac{1}{T}\int_0^T S_t \, dt - K\right)^+\right]$$
+$$\text{CallAsian}(r, \sigma, S_0, T, K) = e^{-rT} \, \mathbb{E}^{Q}\!\left[\left(\frac{1}{T}\int_0^T S_t \, dt - K\right)^+\right]$$
 
-No closed-form exists for the arithmetic average of log-normals, motivating Monte Carlo. The geometric average $A_T^{\text{geom}} = \exp\!\left(\frac{1}{n+1}\sum \ln S_{t_i}\right)$ is used as a control variate, exploiting $A_T^{\text{geom}} \le A_T^{\text{arith}}$ path-wise via the AM-GM inequality.
+No closed-form exists for the arithmetic average of log-normals, motivating Monte Carlo. The geometric average $A_T^{geom} = \exp\!\left(\frac{1}{n+1}\sum \ln S_{t_i}\right)$ is used as a control variate, exploiting $A_T^{geom} \leq A_T^{arith}$ path-wise via the AM-GM inequality.
 
 ### Part 2: Market-Making Model
 
@@ -111,7 +110,7 @@ $$d\hat{U}_t = -\eta \hat{U}_t \, dt + \sigma^{-1}(q - \eta q \hat{P}_t) \, dI_t
 | `fig_q3_ci_length.pdf` | 95% CI width: arithmetic vs. geometric averaging |
 | `fig_q4_comparison.pdf` | Price ordering: Geometric ≤ Arithmetic ≤ European |
 | `fig_displacements.pdf` | Optimal ask/bid displacements as functions of fad $u$ |
-| `fig_filter.pdf` | Kalman-Bucy filter vs. true fad for $q \in \{0.3, 0.6, 0.9\}$ |
+| `fig_filter.pdf` | Kalman-Bucy filter vs. true fad for q = 0.3, 0.6, 0.9 |
 | `fig_gamma_paths.pdf` | Inventory paths under different informed-flow sensitivity $\gamma$ |
 | `fig_perf_q.pdf` | Strategy performance vs. fad weight $q$ |
 | `fig_perf_gamma.pdf` | Strategy performance vs. informed-flow sensitivity $\gamma$ |
