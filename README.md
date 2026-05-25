@@ -1,7 +1,6 @@
 # Asian Option Pricing & Optimal Market-Making under Fad Dynamics
 
 > **Quantitative Finance Research Project** 
----
 
 ## Overview
 
@@ -21,7 +20,7 @@ The market-making model is based on the recent paper:
 
 | Result | Details |
 |---|---|
-| **Price ordering** | Proved and verified: $C^{geom}_{Asian} \leq C^{arith}_{Asian} \leq C_{BS}$ for all 100 parameter combinations |
+| **Price ordering** | Proved and verified: $C^{geom}\_{Asian} \leq C^{arith}\_{Asian} \leq C\_{BS}$ for all 100 parameter combinations |
 | **Variance reduction** | Geometric averaging consistently narrows 95% CIs by 2–10% depending on moneyness |
 | **Convexity** | Numerical confirmation: min second finite difference $> 0$ across full strike grid |
 | **Monte Carlo** | M = 200,000 paths, n = 50 steps, exact log-normal increments (no discretisation bias) |
@@ -30,8 +29,8 @@ The market-making model is based on the recent paper:
 
 | Result | Details |
 |---|---|
-| **Spread invariance** | $\delta^{a,*} + \delta^{b,*} = 2/k - 2A(t)$ — spread is **independent of fad and informed-trader share** |
-| **Adverse selection via skew** | Informed flow enters exclusively through quote asymmetry $\delta^{a,*} - \delta^{b,*}$, not spread widening |
+| **Spread invariance** | $\delta^{a,\*} + \delta^{b,\*} = 2/k - 2A(t)$ — spread is **independent of fad and informed-trader share** |
+| **Adverse selection via skew** | Informed flow enters exclusively through quote asymmetry $\delta^{a,\*} - \delta^{b,\*}$, not spread widening |
 | **Information value** | FI outperforms PI by ~0.6% in mean objective; both dominate CJP as fad weight $q \to 1$ |
 | **Kalman-Bucy** | Filter closes FI–PI gap as $q \to 1$, consistent with the separation principle |
 
@@ -79,14 +78,14 @@ The market-making model is based on the recent paper:
 The risk-neutral price of an arithmetic Asian call is:
 $$\text{CallAsian}(r, \sigma, S_0, T, K) = e^{-rT} \, \mathbb{E}^{Q}\!\left[\left(\frac{1}{T}\int_0^T S_t \, dt - K\right)^+\right]$$
 
-No closed-form exists for the arithmetic average of log-normals, motivating Monte Carlo. The geometric average $A_T^{geom} = \exp\!\left(\frac{1}{n+1}\sum \ln S_{t_i}\right)$ is used as a control variate, exploiting $A_T^{geom} \leq A_T^{arith}$ path-wise via the AM-GM inequality.
+No closed-form exists for the arithmetic average of log-normals, motivating Monte Carlo. The geometric average $A\_T^{geom} = \exp\!\left(\frac{1}{n+1}\sum \ln S\_{t\_i}\right)$ is used as a control variate, exploiting $A\_T^{geom} \le A\_T^{arith}$ path-wise via the AM-GM inequality.
 
 ### Part 2: Market-Making Model
 
 **State dynamics:**
 $$dS_t = \mu \, dt + \sigma \, dW_t, \qquad dU_t = -\eta U_t \, dt + dB_t$$
 
-where $W_t = p Z_t + q U_t$ decomposes the price Brownian motion into a fundamental component ($Z$) and a fad component ($U$, an OU process).
+where $W\_t = p Z\_t + q U\_t$ decomposes the price Brownian motion into a fundamental component ($Z$) and a fad component ($U$, an OU process).
 
 **Order arrival intensities** (informed + uninformed traders):
 $$\lambda^a_t = \left(\phi e^{-k\delta^a} + \psi e^{-k\delta^a - \gamma(\sigma q U_t \vee S^-)}\right) \mathbf{1}_{\{Q_{t-} > \underline{q}\}}$$
