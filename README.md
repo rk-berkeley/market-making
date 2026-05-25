@@ -1,7 +1,6 @@
 # Asian Option Pricing & Optimal Market-Making under Fad Dynamics
 
-> **Quantitative Finance Research Project** — INDENG 222, Spring 2026  
-> UC Berkeley, Industrial Engineering & Operations Research
+> **Quantitative Finance Research Project**
 
 ---
 
