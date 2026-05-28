@@ -88,7 +88,9 @@ $$dS_t = \mu \, dt + \sigma \, dW_t, \qquad dU_t = -\eta U_t \, dt + dB_t$$
 where $W\_t = p Z\_t + q U\_t$ decomposes the price Brownian motion into a fundamental component ($Z$) and a fad component ($U$, an OU process).
 
 **Order arrival intensities** (informed + uninformed traders):
-$$\lambda^a_t = \left(\phi e^{-k\delta^a} + \psi e^{-k\delta^a - \gamma(\sigma q U_t \vee S^-)}\right) \mathbf{1}_{\{Q_{t-} > \underline{q}\}}$$
+$$
+\lambda^a_t = \left(\phi e^{-k\delta^a} + \psi e^{-k\delta^a - \gamma(\sigma q U_t \vee S^-)}\right) \mathbf{1}_{\{Q_{t-} > \underline{q}\}}
+$$
 
 **Value function ansatz** (quadratic in inventory):
 $$V(t, q, u) = q^2 A(t) + q B(t, u) + C(t, u)$$
